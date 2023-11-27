@@ -1,0 +1,216 @@
+/*Clearing brwoser specific formats*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*color variable definitions*/
+:root {
+    --background-white-color: rgb(232, 226, 226);
+    --accent-green-cyan: rgba(38, 135, 127, 1);
+    --tint-green-cyan: rgba(38, 135, 127, 0.5);
+    --white-color: rgb(255,255,255);
+    --focus-green-color: rgb(0 255 34);
+  }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    background-color: var(--background-white-color);
+}
+
+header > img {
+    margin: 0 auto 3vh auto;
+    display: block;
+    width: 10vw;
+    min-width: 94px;
+    height: 35vh;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+}
+
+nav menu {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    background-color: var(--accent-green-cyan);
+    min-height: 8vh;
+    align-items: center;
+}
+
+menu a {
+    text-decoration: none;
+}
+
+menu li {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--white-color);
+    font-size: 1.25rem;
+}
+
+menu li:hover {
+    color: orange;
+}
+
+#promotion-section {
+    /* Adding a tint to the background image in order for the text to be clearer for the viewer */
+    background: linear-gradient( var(--tint-green-cyan), var(--tint-green-cyan)),
+    url("Assets/images/banner.jpg");
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#promotion-section h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    font-weight: bolder;
+    font-style: italic;
+    padding: 15vh;
+    color: white;
+    text-shadow: 4px 2px black;
+}
+
+#promotion-section button {
+    background-color: var(--accent-green-cyan);
+    color: var(--white-color);
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-style: italic;
+    padding: 10px;
+    min-width: 300px
+}
+
+button span {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--focus-green-color);
+    min-height: 6vh;
+    padding: 2px;
+}
+
+#promotion-section:hover button span{
+    animation: blinking 2s alternate;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes blinking {
+  0% {
+    color:var(--focus-green-color);
+    font-size: 1.5rem;
+  }
+  50% {
+        color:red;
+        font-size: 2rem;
+  }
+  100% {
+	color:var(--focus-green-color);
+    font-size: 1.5rem;
+  }
+}
+
+#services-section {
+    margin: 5vh 1vw 0 1vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
+article {
+    border: 2px solid var(--accent-green-cyan);
+    max-width: 30%;
+    max-height: 80vh;
+    min-width: 350px;
+    margin: 5px;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+article:hover{
+    box-shadow:5px 0px 25px #000;
+}
+
+article img {
+    width: 100%;
+    max-height: 240px;
+    padding: 10px;
+    border-bottom: 2px solid var(--accent-green-cyan);
+}
+
+article h2 {
+    font-size: 1.35em;
+    color: var(--accent-green-cyan);
+    padding: 10px;
+}
+
+article p {
+    color: var(--accent-green-cyan);
+    padding: 10px;
+}
+
+article a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 10px;
+    background-color: var(--accent-green-cyan);
+    color: #F5FEFD;
+    padding: 10px;
+}
+
+article a:hover {
+    color: orange;
+}
+
+footer{
+    width: 100%;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--accent-green-cyan);
+    font-size: 1rem;
+}
+
+footer img {
+    width: 4vw;
+    height: 10vh;
+}
+
+footer div {
+    align-self: center;
+    color: var(--white-color);
+} 
+
+
+/*Tweaks For smaller screens*/
+@media screen and (min-width: 320px) and (max-width: 479px) {
+    menu li {
+        font-size: 1rem;
+    }
+
+    #promotion-section h1 {
+        font-size: 1em;
+    }
+
+    article {
+        min-width: 320px;
+    }  
+
+    #promotion-section button {
+        width: 100vw;
+    }
+}
